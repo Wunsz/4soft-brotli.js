@@ -1,4 +1,11 @@
-var brotli = require('./build/encode');
+var brotliLoader = require('./build/encode');
+
+let brotli = {};
+
+brotliLoader().then((b) => {
+  brotli = b;
+});
+
 
 /**
  * Compresses the given buffer
